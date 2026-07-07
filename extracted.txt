@@ -1,0 +1,1 @@
+I will write a Node.js script to extract the original `#recognition-project` (HospiConnect card) and `#skills` block markup from the session history transcript (`transcript_full.jsonl`).
