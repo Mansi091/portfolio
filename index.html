@@ -10,40 +10,40 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      /* General Page Theme: Cozy Warm Garden Faint Theme */
-      --bg: #faedcd;             /* Papaya Whip background */
-      --body-bg: #faedcd;
-      --card-bg: #fefae0;        /* Cornsilk card background */
-      --text-primary: #3d2c1e;    /* Deep Bronze-Charcoal for primary text */
-      --text-secondary: #5c4c3d;  /* Soft Bronze-Charcoal for descriptions */
-      --text-muted: #8a7c6e;     /* Muted Warm Gray for details */
-      --border: #e9edc9;          /* Beige border */
-      --tag-bg: #ccd5ae;          /* Dry Sage tag background */
-      --accent: #d4a373;          /* Light Bronze accent */
-      --heading-color: #3d2c1e;   /* Deep Bronze-Charcoal for Headings */
-      --btn-bg: #d4a373;          /* Light Bronze button */
-      --btn-hover: #b58253;       /* Darker Bronze hover */
+      /* Color Palette: F8F2E6 / F5DABB / A39D99 */
+      --bg: #F8F2E6;             /* Warm Linen page background */
+      --body-bg: #F8F2E6;
+      --card-bg: #EDE3D4;        /* Warm Cream card background — minimal lift */
+      --text-primary: #2e2825;    /* Deep warm dark for primary text */
+      --text-secondary: #3d3430;  /* Slightly lighter warm dark */
+      --text-muted: #5a5250;     /* Muted warm tone for details */
+      --border: #F5DABB;          /* Warm Wheat border */
+      --tag-bg: #F5DABB;          /* Warm Wheat tag background */
+      --accent: #F5DABB;          /* Warm Wheat accent */
+      --heading-color: #2e2825;   /* Deep warm dark for Headings */
+      --btn-bg: #F5DABB;          /* Warm Wheat button */
+      --btn-hover: #e8c99a;       /* Slightly deeper wheat hover */
       --code-font: 'JetBrains Mono', monospace;
-      --shadow: 0 4px 12px -2px rgba(61, 44, 30, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.01);
-      --shadow-hover: 0 16px 24px -8px rgba(61, 44, 30, 0.1), 0 4px 12px -2px rgba(61, 44, 30, 0.05);
+      --shadow: 0 4px 12px -2px rgba(163, 157, 153, 0.25), 0 2px 6px -1px rgba(163, 157, 153, 0.1);
+      --shadow-hover: 0 16px 24px -8px rgba(163, 157, 153, 0.35), 0 4px 12px -2px rgba(163, 157, 153, 0.2);
     }
 
     [data-theme="dark"] {
-      /* Dark Mode variables: Cozy Dark Forest Theme */
-      --bg: #1c1914;             /* Deep Charcoal Bronze background */
+      /* Dark Mode: keeping consistent dark tones */
+      --bg: #1c1914;
       --body-bg: #1c1914;
-      --card-bg: #2b271f;        /* Dark Bronze-Slate Card background */
-      --text-primary: #faedcd;    /* Papaya Whip text */
-      --text-secondary: #fefae0;  /* Cornsilk descriptions */
-      --text-muted: #d4a373;     /* Light Bronze text */
-      --border: #3d372c;          /* Deep Beige border */
-      --tag-bg: #3d372c;          /* Dark Beige tag background */
-      --accent: #d4a373;          /* Light Bronze accent */
-      --heading-color: #fefae0;   /* Cornsilk for Headings */
-      --btn-bg: #d4a373;          /* Light Bronze button */
-      --btn-hover: #b58253;       /* Darker Bronze hover */
+      --card-bg: #EDE3D4;
+      --text-primary: #F8F2E6;
+      --text-secondary: #F5DABB;
+      --text-muted: #c9c3bf;
+      --border: #F5DABB;
+      --tag-bg: #8a8480;
+      --accent: #F5DABB;
+      --heading-color: #F8F2E6;
+      --btn-bg: #F5DABB;
+      --btn-hover: #e8c99a;
       --shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.02);
-      --shadow-hover: 0 16px 24px -8px rgba(212, 163, 115, 0.15), 0 0 0 1px rgba(212, 163, 115, 0.05);
+      --shadow-hover: 0 16px 24px -8px rgba(245, 218, 187, 0.15), 0 0 0 1px rgba(245, 218, 187, 0.05);
     }
 
     body, .project-card, .quest-card, .skill-group, .timeline-card, .cert-card, .contact-box, nav, footer, a, button, svg {
@@ -107,16 +107,24 @@
       margin: 0 auto;
     }
 
-    /* Navigation */
+    /* Navigation — Glassmorphism Sticky */
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       width: 100%;
       max-width: 1150px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid rgba(245, 218, 187, 0.4);
       margin-bottom: 4rem;
+      background: rgba(248, 242, 230, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 0 0 14px 14px;
+      box-shadow: 0 4px 24px -4px rgba(163,157,153,0.12);
     }
 
     .nav-logo {
@@ -178,12 +186,15 @@
 
     .hero h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      line-height: 1.15;
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      line-height: 1.12;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
-      color: var(--heading-color);
+      background: linear-gradient(135deg, #2e2825 0%, #8a7060 50%, #C4A882 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero-desc {
@@ -280,18 +291,19 @@
     .project-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
       border-radius: 12px;
       padding: 2rem;
       box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
     }
 
     .project-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 0 0 2px var(--accent), 0 16px 32px -8px rgba(163,157,153,0.25);
     }
 
 
@@ -373,19 +385,23 @@
     .project-stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem;
+      gap: 0.4rem;
       margin-top: 0.5rem;
     }
 
     .stack-tag {
       font-family: var(--code-font);
-      font-size: 0.7rem;
-      color: var(--text-muted);
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+      background: rgba(245, 218, 187, 0.45);
+      border: 1px solid rgba(245, 218, 187, 0.8);
+      border-radius: 20px;
+      padding: 0.18rem 0.55rem;
+      letter-spacing: 0.02em;
     }
 
     .stack-tag:not(:last-child)::after {
-      content: " ·";
-      font-weight: bold;
+      content: "";
     }
 
     /* Side Quests Grid */
@@ -398,10 +414,11 @@
     .quest-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
       border-radius: 8px;
       padding: 1.5rem;
       box-shadow: var(--shadow);
-      transition: transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -409,8 +426,8 @@
     }
 
     .quest-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 0 0 2px var(--accent), 0 16px 32px -8px rgba(163,157,153,0.25);
     }
 
     .quest-title {
@@ -453,9 +470,16 @@
     .skill-group {
       background: var(--card-bg);
       border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
       border-radius: 8px;
       padding: 1.5rem;
       box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .skill-group:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 0 2px var(--accent), 0 16px 32px -8px rgba(163,157,153,0.25);
     }
 
     .skill-category {
@@ -752,6 +776,104 @@
       font-size: 0.85rem;
       color: var(--text-secondary);
     }
+    /* Scroll fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Awards Carousel */
+    .awards-carousel {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+
+    .awards-carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .awards-carousel-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+    }
+
+    .awards-carousel-slide img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .awards-carousel-caption {
+      padding: 1rem 1.5rem;
+      font-family: var(--code-font);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      background: var(--card-bg);
+      letter-spacing: 0.03em;
+    }
+
+    .awards-carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-60%);
+      background: rgba(248, 242, 230, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      z-index: 10;
+      transition: background 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .awards-carousel-btn:hover {
+      background: var(--accent);
+      box-shadow: 0 4px 14px rgba(163,157,153,0.2);
+    }
+
+    .awards-carousel-btn.prev { left: 12px; }
+    .awards-carousel-btn.next { right: 12px; }
+
+    .awards-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      padding: 0.6rem 0 0.8rem;
+      background: var(--card-bg);
+    }
+
+    .awards-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .awards-dot.active {
+      background: var(--text-secondary);
+      transform: scale(1.3);
+    }
   </style>
 </head>
 <body>
@@ -995,7 +1117,7 @@
           <div class="quest-status">
             Completed 
             <a href="https://github.com/Mansi091/Comic-forge.git" target="_blank" style="margin-right:0.5rem;">Repo</a>
-            <a href="https://comic-forge.vercel.app/" target="_blank">Live ↗</a>
+            <a href="https://comicforge-hazel.vercel.app/" target="_blank">Live ↗</a>
           </div>
         </div>
 
@@ -1093,26 +1215,29 @@
     const projectsData = {
       'autodim-ai': {
         name: 'AutoDim AI / SolidWorks CAD Agent',
-        badge: '',
+        badge: 'In Progress',
         links: [
           { text: 'GitHub ↗', url: 'https://github.com/Mansi091/AutoDealer.git', primary: true }
         ],
-        description: 'An agentic automation system that extracts design parameters from 3D models and automatically places engineering dimensions on SolidWorks 2D sheets following standard layout rules.',
+        description: 'An agentic automation system (currently in progress) that extracts design parameters from 3D models and automatically places engineering dimensions on SolidWorks 2D sheets following standard layout rules. Built using the SolidWorks COM API and an LLM spatial placement agent.',
         deep_dive: [
           'Manual detailing of engineering drawings in SolidWorks is time-consuming and highly prone to alignment inconsistencies. AutoDim AI automates this entire detaching and placement workflow by extracting geometric properties directly from 3D CAD models and applying professional drafting layouts.',
-          'The application integrates directly with SolidWorks 2D/3D sheets via the COM API using pywin32. Spatial modeling data is analyzed by Llama-3 (Groq API) acting as a spatial placement agent, calculating coordinates dynamically to ensure zero overlap between annotations and drawing geometry.'
+          'The application integrates directly with SolidWorks 2D/3D sheets via the COM API using pywin32. Currently, spatial modeling data is analyzed by Llama-3 (Groq API) acting as a spatial placement agent, calculating coordinates dynamically to ensure zero overlap between annotations and drawing geometry.',
+          'The project is actively under development. The next planned milestone is replacing the cloud-based Groq API with a locally-run Qwen2.5-Coder model via Ollama. This shift eliminates API latency, ensures full offline capability (critical in industrial CAD environments), and removes data privacy concerns since proprietary CAD files never leave the local machine.'
         ],
         highlights: [
           'Integrates directly with SolidWorks 2D/3D sheets via the COM API (pywin32) for deep software automation',
-          'Leverages Llama-3 (Groq API) as an LLM agent to intelligently determine placement coordinates, preventing dimension overlap',
-          'Triggers automatically via SolidWorks Task Scheduler to run batches of drawings unattended'
+          'Currently uses Llama-3 (Groq API) as the LLM spatial agent — planned migration to local Qwen2.5-Coder model',
+          'Triggers automatically via SolidWorks Task Scheduler to run batches of drawings unattended',
+          'Future: Full offline execution with Qwen2.5-Coder (Ollama) — no API dependency, no data exposure'
         ],
-        stack: ['Python', 'SolidWorks COM API', 'pywin32', 'LLM Agent (Llama-3)', 'Groq API'],
+        stack: ['Python', 'SolidWorks COM API', 'pywin32', 'LLM Agent (Llama-3)', 'Groq API', 'Qwen2.5-Coder (Planned)', 'Ollama (Planned)'],
         challenges: [
           { title: 'COM Interop Latency', text: 'Connecting directly with SolidWorks through pywin32 was bottlenecked by slow document traversing calls. Resolved by implementing geometric coordinates caching on initial parse, boosting detaching speed by 60%.' },
-          { title: 'Dimension Overlap Prevention', text: 'Legacy CAD tools dimension randomly. AutoDim uses an AI agent to build a topological bounding grid map of components, finding coordinate corridors where dimensions sit perfectly clear of edge paths.' }
+          { title: 'Dimension Overlap Prevention', text: 'Legacy CAD tools dimension randomly. AutoDim uses an AI agent to build a topological bounding grid map of components, finding coordinate corridors where dimensions sit perfectly clear of edge paths.' },
+          { title: 'Cloud API Dependency (Active Problem)', text: 'Groq API requires internet access and introduces latency — unsuitable for air-gapped industrial environments. Migrating to Qwen2.5-Coder running locally via Ollama will resolve this entirely.' }
         ],
-        impact: 'Automated drafting pipeline reduced layout drawing time from 20 minutes down to under 30 seconds per sheet, significantly freeing engineering drafting overhead.'
+        impact: 'Current build reduces drawing layout time from 20 minutes to under 30 seconds. Planned migration to local Qwen2.5-Coder will make the tool fully offline, zero-cost, and production-ready for closed industrial environments.'
       },
       'medpulse-ai': {
         name: 'MedPulse AI',
@@ -1296,6 +1421,11 @@
           '1st Runner-Up — Vyoma National Prototype Competition (Software Category)',
           '1st Runner-Up — 5th Regional Conclave, for innovation in healthcare technology'
         ],
+        awards: [
+          { src: 'prayatna_award.jpg', caption: '🏆 Prayatna 3.0 — Wangoes Excellence Award, National Hackathon (Top 10 / 1,661 teams)' },
+          { src: 'vyoma_award.jpg', caption: '🥈 1st Runner-Up — Vyoma National Level Prototype Competition (Software Category)' },
+          { src: 'regional_award.jpg', caption: '🥈 1st Runner-Up — 5th Regional Conclave, AISSMS Institute of Information Technology' }
+        ],
         stack: ['Flutter', 'Next.js', 'Firebase', 'Firestore', 'Gemini AI', 'Leaflet', 'Tailwind CSS'],
         challenges: [
           { title: 'Unstable Network Support', text: 'During accidents, mobile network connectivity can be unreliable. We built local SOS offline storage and programmed an automatic SMS fallback coordinator when Firebase queries fail.' },
@@ -1362,6 +1492,27 @@
             </div>
           </div>
 
+          ${project.awards ? `
+          <div class="detail-section" style="margin-bottom: 2rem;">
+            <h2 class="detail-section-title">🏆 Award Moments</h2>
+            <div class="awards-carousel" id="carousel-${projectId}">
+              <div class="awards-carousel-track" id="track-${projectId}">
+                ${project.awards.map(a => `
+                  <div class="awards-carousel-slide">
+                    <img src="${a.src}" alt="${a.caption}" loading="lazy" />
+                    <div class="awards-carousel-caption">${a.caption}</div>
+                  </div>
+                `).join('')}
+              </div>
+              <button class="awards-carousel-btn prev" onclick="moveCarousel('${projectId}', -1)">‹</button>
+              <button class="awards-carousel-btn next" onclick="moveCarousel('${projectId}', 1)">›</button>
+              <div class="awards-carousel-dots" id="dots-${projectId}">
+                ${project.awards.map((_, i) => `<div class="awards-dot ${i === 0 ? 'active' : ''}" onclick="goToSlide('${projectId}', ${i})"></div>`).join('')}
+              </div>
+            </div>
+          </div>
+          ` : ''}
+
           <div class="detail-grid">
             <div class="detail-main">
               <div class="detail-section">
@@ -1400,6 +1551,26 @@
           </div>
         </div>
       `;
+    }
+
+    /* Award carousel state & controls */
+    const carouselState = {};
+    function moveCarousel(id, dir) {
+      const track = document.getElementById('track-' + id);
+      const total = track.children.length;
+      if (!carouselState[id]) carouselState[id] = 0;
+      carouselState[id] = (carouselState[id] + dir + total) % total;
+      updateCarousel(id);
+    }
+    function goToSlide(id, index) {
+      carouselState[id] = index;
+      updateCarousel(id);
+    }
+    function updateCarousel(id) {
+      const track = document.getElementById('track-' + id);
+      const dots = document.querySelectorAll('#dots-' + id + ' .awards-dot');
+      track.style.transform = `translateX(-${carouselState[id] * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === carouselState[id]));
     }
 
     function handleRoute() {
@@ -1453,6 +1624,24 @@
         setTheme('dark');
       }
     });
+    /* ── Scroll fade-in via Intersection Observer ── */
+    (function () {
+      const targets = document.querySelectorAll(
+        '.project-card, .quest-card, .skill-group, .timeline-card, .cert-card, .contact-box, section'
+      );
+      targets.forEach(el => el.classList.add('fade-in'));
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      targets.forEach(el => observer.observe(el));
+    })();
   </script>
 </body>
 </html>

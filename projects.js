@@ -1,26 +1,29 @@
 window.projectsData = {
   'autodim-ai': {
     name: 'AutoDim AI / SolidWorks CAD Agent',
-    badge: '',
+    badge: 'In Progress',
     links: [
       { text: 'GitHub ↗', url: 'https://github.com/Mansi091/AutoDealer.git', primary: true }
     ],
-    description: 'An agentic automation system that extracts design parameters from 3D models and automatically places engineering dimensions on SolidWorks 2D sheets following standard layout rules.',
+    description: 'An agentic automation system (currently in progress) that extracts design parameters from 3D models and automatically places engineering dimensions on SolidWorks 2D sheets following standard layout rules. Built using the SolidWorks COM API and an LLM spatial placement agent.',
     deep_dive: [
       'Manual detailing of engineering drawings in SolidWorks is time-consuming and highly prone to alignment inconsistencies. AutoDim AI automates this entire detaching and placement workflow by extracting geometric properties directly from 3D CAD models and applying professional drafting layouts.',
-      'The application integrates directly with SolidWorks 2D/3D sheets via the COM API using pywin32. Spatial modeling data is analyzed by Llama-3 (Groq API) acting as a spatial placement agent, calculating coordinates dynamically to ensure zero overlap between annotations and drawing geometry.'
+      'The application integrates directly with SolidWorks 2D/3D sheets via the COM API using pywin32. Currently, spatial modeling data is analyzed by Llama-3 (Groq API) acting as a spatial placement agent, calculating coordinates dynamically to ensure zero overlap between annotations and drawing geometry.',
+      'The project is actively under development. The next planned milestone is replacing the cloud-based Groq API with a locally-run Qwen2.5-Coder model via Ollama. This shift eliminates API latency, ensures full offline capability (critical in industrial CAD environments), and removes data privacy concerns since proprietary CAD files never leave the local machine.'
     ],
     highlights: [
       'Integrates directly with SolidWorks 2D/3D sheets via the COM API (pywin32) for deep software automation',
-      'Leverages Llama-3 (Groq API) as an LLM agent to intelligently determine placement coordinates, preventing dimension overlap',
-      'Triggers automatically via SolidWorks Task Scheduler to run batches of drawings unattended'
+      'Currently uses Llama-3 (Groq API) as the LLM spatial agent — planned migration to local Qwen2.5-Coder model',
+      'Triggers automatically via SolidWorks Task Scheduler to run batches of drawings unattended',
+      'Future: Full offline execution with Qwen2.5-Coder (Ollama) — no API dependency, no data exposure'
     ],
-    stack: ['Python', 'SolidWorks COM API', 'pywin32', 'LLM Agent (Llama-3)', 'Groq API'],
+    stack: ['Python', 'SolidWorks COM API', 'pywin32', 'LLM Agent (Llama-3)', 'Groq API', 'Qwen2.5-Coder (Planned)', 'Ollama (Planned)'],
     challenges: [
       { title: 'COM Interop Latency', text: 'Connecting directly with SolidWorks through pywin32 was bottlenecked by slow document traversing calls. Resolved by implementing geometric coordinates caching on initial parse, boosting detaching speed by 60%.' },
-      { title: 'Dimension Overlap Prevention', text: 'Legacy CAD tools dimension randomly. AutoDim uses an AI agent to build a topological bounding grid map of components, finding coordinate corridors where dimensions sit perfectly clear of edge paths.' }
+      { title: 'Dimension Overlap Prevention', text: 'Legacy CAD tools dimension randomly. AutoDim uses an AI agent to build a topological bounding grid map of components, finding coordinate corridors where dimensions sit perfectly clear of edge paths.' },
+      { title: 'Cloud API Dependency (Active Problem)', text: 'Groq API requires internet access and introduces latency — unsuitable for air-gapped industrial environments. Migrating to Qwen2.5-Coder running locally via Ollama will resolve this entirely.' }
     ],
-    impact: 'Automated drafting pipeline reduced layout drawing time from 20 minutes down to under 30 seconds per sheet, significantly freeing engineering drafting overhead.'
+    impact: 'Current build reduces drawing layout time from 20 minutes to under 30 seconds. Planned migration to local Qwen2.5-Coder will make the tool fully offline, zero-cost, and production-ready for closed industrial environments.'
   },
   'medpulse-ai': {
     name: 'MedPulse AI',
@@ -203,6 +206,11 @@ window.projectsData = {
       'Top 10 finalist out of 1,661 registrations — Wangoes Excellence Award, Prayatna 3.0 National Hackathon',
       '1st Runner-Up — Vyoma National Prototype Competition (Software Category)',
       '1st Runner-Up — 5th Regional Conclave, for innovation in healthcare technology'
+    ],
+    awards: [
+      { src: 'prayatna_award.jpg', caption: '🏆 Prayatna 3.0 — Wangoes Excellence Award, National Hackathon (Top 10 / 1,661 teams)' },
+      { src: 'vyoma_award.jpg', caption: '🥈 1st Runner-Up — Vyoma National Level Prototype Competition (Software Category)' },
+      { src: 'regional_award.jpg', caption: '🥈 1st Runner-Up — 5th Regional Conclave, AISSMS Institute of Information Technology' }
     ],
     stack: ['Flutter', 'Next.js', 'Firebase', 'Firestore', 'Gemini AI', 'Leaflet', 'Tailwind CSS'],
     challenges: [
